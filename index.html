@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coming Soon</title>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body>
+<div id="wrapper">
+   <div id="logo">
+      <img src="./images/logo.jpg" width="350px" />
+   </div>
+   <div id="main">
+      <h1>Coming soon!</h1>
+      <p class="desc1">A little something for while you're waiting:</p>
+
+      <div id="page-info">
+         <a class="social-slide" title="+AIS BYU Chapter" style="background-image: url(./images/google-hover.png)" href="http://gplus.to/byuais"></a>
+         <a class="social-slide" title="Email AIS" style="background-image: url(./images/twitter-hover.png)" href="http://www.twitter.com/byuais"></a>
+         <a class="social-slide" title="Friend Us" style="background-image: url(./images/facebook-hover.png)" href="http://www.facebook.com/aisbyu"></a>
+         <a class="social-slide" title="Email AIS" style="background-image: url(./images/email-hover.png)" href="mailto:ais.byu@gmail.com"></a>
+      </div><!-- #page-info -->
+   </div><!-- #main -->
+</div><!-- #wrapper -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+$(window).resize(function () {
+   var $element = $('#wrapper');
+   $element.css("position","absolute");
+   $element.css("top", Math.max(0, (($(window).height() - $($element).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+   $element.css("left", Math.max(0, (($(window).width() - $($element).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+   return $element;
+});
+
+$(window).resize();
+</script>
+
+
+</body>
+</html>
