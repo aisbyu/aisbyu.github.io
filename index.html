@@ -4,7 +4,28 @@
 <title>AIS BYU Coming Soon</title>
 <meta name="keywords" content="AIS, BYU, Association for Information Systems, Brigham Young University">
 <meta name="description" content="The official website for the Association for Information Systems Brigham Young University Chapter">
+<script type="text/javascript">
+  // This is up here to handle redirects ASAP!
 
+  var destinations = {
+    google: 'https://plus.google.com/u/0/111490187039594096525',
+    twitter: 'https://www.twitter.com/byuais',
+    facebook: 'https://www.facebook.com/aisbyu',
+    calendar: 'http://ais.byu.edu/?page_id=24',
+    email: 'mailto:ais.byu@gmail.com',
+    blog: 'http://ais.byu.edu',
+    join: 'http://ais.byu.edu/?page_id=130',
+    'schedule-room': 'https://docs.google.com/spreadsheet/viewform?formkey=dHdtZnZYcU5VYTBlbEJKa3B4dGRLaUE6MQ'
+  }
+  var simpleQueryParams = location.search.substring(1).split('&');
+  for (var i = 0; i < simpleQueryParams.length; i++) {
+    var keyValue = simpleQueryParams[i].split('=');
+    if (destinations[keyValue[0]]) {
+      window.location.href = destinations[keyValue[0]];
+      break;
+    }
+  }
+</script>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <link rel="icon" type="image/png" href="./favicon.png">
 </head>
@@ -22,20 +43,25 @@
          <a class="social-slide" title="Email AIS" style="background-image: url(./images/twitter-hover.png)" href="http://www.twitter.com/byuais"></a>
          <a class="social-slide" title="Friend Us" style="background-image: url(./images/facebook-hover.png)" href="http://www.facebook.com/aisbyu"></a>
          <a class="social-slide" title="Email AIS" style="background-image: url(./images/email-hover.png)" href="mailto:ais.byu@gmail.com"></a>
-      </div><!-- #page-info -->
-   </div><!-- #main -->
-</div><!-- #wrapper -->
+      </div>
+   </div>
+</div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script>
-$(window).resize(function () {
-   var $element = $('#wrapper');
-   $element.css("position","absolute");
-   $element.css("top", Math.max(0, (($(window).height() - $($element).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-   $element.css("left", Math.max(0, (($(window).width() - $($element).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
-   return $element;
+
+$(function() {
+
+  $(window).resize(function () {
+    var $element = $('#wrapper');
+    $element.css("position","absolute");
+    $element.css("top", Math.max(0, (($(window).height() - $($element).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+    $element.css("left", Math.max(0, (($(window).width() - $($element).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+    return $element;
+  });
+
+  $(window).resize();
 });
 
-$(window).resize();
 </script>
 
 
